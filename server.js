@@ -9,6 +9,7 @@ const {
   CLIENT_ID,
   CLIENT_SECRET,
 } = require('./config');
+const helpers = require('./helpers');
 
 /* Server */
 var stateKey = 'spotify_auth_state';
@@ -16,24 +17,11 @@ const app = express();
 app.use(cors())
   .use(cookieParser());
 
-/**
- * Generates a random string containing numbers and letters
- * @param  {number} length The length of the string
- * @return {string} The generated string
- */
- var generateRandomString = function(length) {
-  var text = '';
-  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-  for (var i = 0; i < length; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  return text;
-};
 
 /** Login endpoint that the browser requests  */
 app.get('/login', (req, res) => {
-  const state = generateRandomString(16);
+  const state = helpers.generateRandomString(16);
   res.cookie(stateKey, state);
 
   // application requests authorization
@@ -48,7 +36,7 @@ app.get('/login', (req, res) => {
   res.redirect(`https://accounts.spotify.com/authorize?${params.toString()}`);
 });
 
-/** Redirect route called after accepting Spotify Scopes */
+/** Redirect route called after authorization */
 app.get('/callback', (req, res) => {
   console.log(res.statusCode);
 
@@ -90,9 +78,6 @@ app.get('/callback', (req, res) => {
         res.redirect(`${CLIENT_REDIRECT_URI}?${queryString}`);
       });
   }
-
-  
-
 });
 
 app.listen(PORT, () => {
