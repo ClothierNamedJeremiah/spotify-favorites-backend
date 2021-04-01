@@ -2,7 +2,7 @@
 Spotify Favorites is a personalized dashboard that displays your most listened to songs and artists in Spotify. Discover your most listened to songs and artists in Spotify.
 
 
-## Content
+## Repository Content
 
 The following repository is an Express server used for Spotify's **Refreshable user authorization**: [Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#authorization-code-flow). Running this server, you can easily authenticate and gain access to the Spotify's API.
 
