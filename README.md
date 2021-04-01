@@ -16,7 +16,7 @@ The following repository is an Express server used for Spotify's **Refreshable u
 ## Getting Started
 
 1. Create an Application on [Spotify's Developer Dashboard](https://developer.spotify.com/dashboard/applications).
-2. Use the `CLIENT_ID` and `CLIENT_SECRET` obtained from step (1) and create a `.env` file in the root directory to store your configuration variables.
+2. Use the `CLIENT_ID` and `CLIENT_SECRET` obtained from step (1) and create a file named `.env` in the root directory to store your configuration variables.
 
 ```
 PORT=3001
