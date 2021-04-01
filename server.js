@@ -57,7 +57,7 @@ app.get('/callback', (req, res) => {
   const storedState = req.cookies ? req.cookies[stateKey] : null;
 
   if (state === null || state !== storedState) {
-    res.redirect('/#' +
+    res.redirect('/' +
       new URLSearchParams({ error: 'state_mismatch' }).toString()
     );
   } else {
