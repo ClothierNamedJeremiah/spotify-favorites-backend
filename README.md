@@ -1,5 +1,5 @@
 # Spotify Favorites
-Spotify Favorites is a personalized dashboard that displays your most listened to songs and artists in Spotify. Discover your most listened to songs and artists in Spotify.
+Spotify Favorites is a personalized dashboard that displays your most listened to songs and artists in Spotify.
 
 
 ## Repository Content
@@ -9,6 +9,7 @@ The following repository is an Express server used for Spotify's **Refreshable u
 ```
 ./
  |- config.js: reads configuration variables
+ |- helpers.js: utility functions being used in server.js
  |- server.js: express server
 ```
 
