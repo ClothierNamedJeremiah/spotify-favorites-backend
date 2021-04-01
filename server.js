@@ -42,7 +42,6 @@ app.get('/login', (req, res) => {
     response_type: 'code',
     redirect_uri: SERVER_REDIRECT_URI,
     scope: 'user-top-read',
-    show_dialog: true,
     state: state,
   });
 
