@@ -38,8 +38,6 @@ app.get('/login', (req, res) => {
 
 /** Redirect route called after authorization */
 app.get('/callback', (req, res) => {
-  console.log(res.statusCode);
-
   const { code, state } = req.query;
   const storedState = req.cookies ? req.cookies[stateKey] : null;
 
